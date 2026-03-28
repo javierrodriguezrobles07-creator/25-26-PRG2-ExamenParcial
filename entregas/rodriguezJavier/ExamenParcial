@@ -124,7 +124,7 @@ class Libro {
 }
 
 class Libro {
-    
+
     public String obtenerTitulo() {
         return titulo;
     }
@@ -155,5 +155,26 @@ class Libro {
 class Libro {
     public String toString() {
         return titulo + " - " + autor + " (" + codigo + ")";
+    }
+}
+
+class Usuario {
+    private String dni;
+    private String nombre;
+    private String direccion;
+    private Prestamo[] prestamos;
+    private int contadorPrestamos;
+    private static final int CAPACIDAD_MAXIMA = 50;
+    
+    public Usuario(String dni, String nombre, String direccion) {
+        this.dni = dni;
+        this.nombre = nombre;
+        this.direccion = direccion;
+        this.prestamos = new Prestamo[CAPACIDAD_MAXIMA];
+        this.contadorPrestamos = 0;
+    }
+    
+    public Usuario(String dni, String nombre) {
+        this(dni, nombre, "Sin dirección");
     }
 }
