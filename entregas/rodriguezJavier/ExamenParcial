@@ -47,7 +47,8 @@ public class BibliotecaMunicipal{
         Usuario usuario1 = new Usuario("12345678A", "Ana García", "Calle juncal 9");
         Usuario usuario2 = new Usuario("87654321B", "Juan Pérez", "Calle adela bazo 16");
 
-
+        Libro[] libros = new Libro[] {libro1, libro2};
+        Usuario[] usuarios = new Usuario[] {usuario1, usuario2};
 
         Prestamo prestamo1 = new Prestamo(libro1, usuario1, "01/03/2025");
         libro1.prestar();
