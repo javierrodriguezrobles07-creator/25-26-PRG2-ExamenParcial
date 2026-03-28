@@ -11,3 +11,27 @@ class Libro{
     public String toString();
 }
 
+class Usuario {
+    public Usuario(String dni, String nombre, String direccion);
+
+    public String obtenerDNi();
+    public String obtenerNombre();
+    public String obtenerDireccion();
+    public void agregarPrestamo(Prestamo prestamo);
+    public Prestamo[] obtenerPrestamosActivos();
+    public Prestamo[] obtenerHistorialPrestamos();
+    public boolean tienePrestamosVencidos();
+    public String
+}
+
+class Prestamo {
+    public Prestamo(Libro libro, Usuario usuario);
+
+    public Libro obtenerLibro();
+    public Usuario obtenerUsuario();
+    public void registrarDevolucion(String fechaDevolucion);
+    public boolean estaVencido(String fechaActual);
+    public int calcularDiasRetraso(String fechaActual);
+    public boolean estaActivo();
+    public String ();
+}
