@@ -1,11 +1,13 @@
 class Libro{
     public Libro(String titulo, String autor, String codigo):
-    
+    public Libro(String titulo, String autor);
+
     public String obtenerTitulo();
     public String obtenerAutor();
     public String obtenerCodigo();
     public boolean estaPrestado();
     public void prestar();
     public void devolver();
-    public String
+    public String toString();
 }
+
