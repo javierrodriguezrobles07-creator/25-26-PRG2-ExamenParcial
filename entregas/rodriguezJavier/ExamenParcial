@@ -59,5 +59,15 @@ public class BibliotecaMunicipal{
 
         prestamo1.registrarDevolucion("15/03/2025");
         libro1.devolver();
+
+        
+        String fechaActual = "25/03/2025";
+        System.out.println("=== Usuarios con préstamos vencidos ===");
+        for (Usuario u : usuarios) {
+            if (u.tienePrestamosVencidos()) {
+                System.out.println("- " + u.obtenerNombre() + " (" + u.obtenerDni() + ")");
+            }
+        }
+        
     }
 }
