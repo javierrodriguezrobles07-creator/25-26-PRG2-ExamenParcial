@@ -13,6 +13,7 @@ class Libro{
 
 class Usuario {
     public Usuario(String dni, String nombre, String direccion);
+    public Usuario(String dni, String nombre);
 
     public String obtenerDNi();
     public String obtenerNombre();
@@ -21,17 +22,19 @@ class Usuario {
     public Prestamo[] obtenerPrestamosActivos();
     public Prestamo[] obtenerHistorialPrestamos();
     public boolean tienePrestamosVencidos();
-    public String
+    public String toString();
 }
 
 class Prestamo {
-    public Prestamo(Libro libro, Usuario usuario);
+    public Prestamo(Libro libro, Usuario usuario, String fechaPrestamo);
 
     public Libro obtenerLibro();
     public Usuario obtenerUsuario();
+    public String obtenerFechaPrestamo();
+    public String obtenerFechaDevolucion();
     public void registrarDevolucion(String fechaDevolucion);
     public boolean estaVencido(String fechaActual);
     public int calcularDiasRetraso(String fechaActual);
     public boolean estaActivo();
-    public String ();
+    public String toString();
 }
