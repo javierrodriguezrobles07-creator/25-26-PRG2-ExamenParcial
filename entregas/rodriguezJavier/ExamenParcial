@@ -104,3 +104,21 @@ class Prestamo {
     private String fechaPrestamo;
     private String fechaDevolucion;
 }
+
+class Libro {
+    private String titulo;
+    private String autor;
+    private String codigo;
+    private boolean prestado;
+    
+    public Libro(String titulo, String autor, String codigo) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.codigo = codigo;
+        this.prestado = false;
+    }
+    
+    public Libro(String titulo, String autor) {
+        this(titulo, autor, "SIN-CODIGO");
+    }
+}
