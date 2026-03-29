@@ -222,9 +222,9 @@ class Usuario {
     private String obtenerFechaActual() {
         return "25/03/2025";
     }
-    private Prestamo[] redimensionarArray(Prestamo[] original, int nuevoTamanio) {
-        Prestamo[] resultado = new Prestamo[nuevoTamanio];
-        for (int i = 0; i < nuevoTamanio; i++) {
+    private Prestamo[] redimensionarArray(Prestamo[] original, int nuevoTamaño) {
+        Prestamo[] resultado = new Prestamo[nuevoTamaño];
+        for (int i = 0; i < nuevoTamaño; i++) {
             resultado[i] = original[i];
         }
         return resultado;
@@ -243,37 +243,30 @@ class Prestamo {
         this.fechaPrestamo = fechaPrestamo;
         this.fechaDevolucion = null;
     }
+    public Libro obtenerLibro() {
+        return libro;
+    }
     public Usuario obtenerUsuario() {
         return usuario;
     }
-    
     public String obtenerFechaPrestamo() {
         return fechaPrestamo;
     }
-    
     public String obtenerFechaDevolucion() {
         return fechaDevolucion;
     }
-    
     public void registrarDevolucion(String fechaDevolucion) {
         this.fechaDevolucion = fechaDevolucion;
     }
-    
     public boolean estaActivo() {
         return fechaDevolucion == null;
     }
-}
-class Prestamo {
-    private int convertirFechaADias(String fecha) {
-        String[] partes = fecha.split("/");
-        int dia = Integer.parseInt(partes[0]);
-        int mes = Integer.parseInt(partes[1]);
-        int anio = Integer.parseInt(partes[2]);
-        return (anio * 365) + (mes * 30) + dia;
+    public boolean estaVencido(String fechaActual) {
+        if (!estaActivo()) {
+            return flase;
+        }
+        return calcularDiasRetraso(fechaActual) > 0;
     }
-}
-
-class Prestamo {
     public int calcularDiasRetraso(String fechaActual) {
         if (!estaActivo()) {
             return 0;
@@ -283,17 +276,6 @@ class Prestamo {
         int retraso = diasActual - (diasPrestamo + DIAS_PRESTAMO);
         return retraso > 0 ? retraso : 0;
     }
-}
-class Prestamo {
-    public boolean estaVencido(String fechaActual) {
-        if (!estaActivo()) {
-            return false;
-        }
-        return calcularDiasRetraso(fechaActual) > 0;
-    }
-}
-
-class Prestamo {
     public String toString() {
         String estado = estaActivo() ? "ACTIVO" : "DEVUELTO";
         String info = libro.obtenerTitulo() + " - " + usuario.obtenerNombre() +
@@ -310,5 +292,12 @@ class Prestamo {
             }
         }
         return info;
+    }
+    private int convertirFechaADias(String fecha) {
+        String[] partes = fecha.split("/");
+        int dia = Integer.parseInt(partes[0]);
+        int mes = Integer.parseInt(partes[1]);
+        int anio = Integer.parseInt(partes[2]);
+        return (año * 365) + (mes * 30) + dia;
     }
 }
