@@ -237,3 +237,16 @@ class Usuario {
         return "25/03/2025";
     }
 }
+
+class Usuario {
+    public boolean tienePrestamosVencidos() {
+        String fechaActual = obtenerFechaActual();
+        for (int i = 0; i < contadorPrestamos; i++) {
+            if (prestamos[i] != null && prestamos[i].estaActivo() && 
+                prestamos[i].estaVencido(fechaActual)) {
+                return true;
+            }
+        }
+        return false;
+    }
+}
