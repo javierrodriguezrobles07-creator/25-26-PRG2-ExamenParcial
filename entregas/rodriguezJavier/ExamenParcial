@@ -250,3 +250,8 @@ class Usuario {
         return false;
     }
 }
+class Usuario {
+    public String toString() {
+        return nombre + " (" + dni + ") - " + direccion;
+    }
+}
