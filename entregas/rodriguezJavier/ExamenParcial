@@ -272,3 +272,17 @@ class Prestamo {
     }
 }
 
+class Prestamo {
+    public Libro obtenerLibro() {
+        return libro;
+    }
+    public Usuario obtenerUsuario() {
+        return usuario;
+    }
+    public String obtenerFechaPrestamo() {
+        return fechaPrestamo;
+    }
+    public String obtenerFechaDevolucion() {
+        return fechaDevolucion;
+    }
+}
