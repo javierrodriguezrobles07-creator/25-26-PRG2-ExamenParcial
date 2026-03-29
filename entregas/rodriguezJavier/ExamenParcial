@@ -318,3 +318,23 @@ class Prestamo {
         return calcularDiasRetraso(fechaActual) > 0;
     }
 }
+
+class Prestamo {
+    public String toString() {
+        String estado = estaActivo() ? "ACTIVO" : "DEVUELTO";
+        String info = libro.obtenerTitulo() + " - " + usuario.obtenerNombre() +
+                      " | Préstamo: " + fechaPrestamo;
+        if (!estaActivo()) {
+            info += " | Devolución: " + fechaDevolucion;
+        }
+        info += " | Estado: " + estado;
+        if (estaActivo()) {
+            String fechaActual = "25/03/2025";
+            int retraso = calcularDiasRetraso(fechaActual);
+            if (retraso > 0) {
+                info += " | Retraso: " + retraso + " días";
+            }
+        }
+        return info;
+    }
+}
