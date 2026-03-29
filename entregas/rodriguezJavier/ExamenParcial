@@ -192,3 +192,11 @@ class Usuario {
         return direccion;
     }
 }
+class Usuario {
+    public void agregarPrestamo(Prestamo prestamo) {
+        if (contadorPrestamos < CAPACIDAD_MAXIMA) {
+            prestamos[contadorPrestamos] = prestamo;
+            contadorPrestamos++;
+        }
+    }
+}
