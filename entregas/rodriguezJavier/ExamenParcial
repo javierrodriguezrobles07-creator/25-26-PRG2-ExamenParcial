@@ -210,3 +210,12 @@ class Usuario {
         return historial;
     }
 }
+class Usuario {
+    private Prestamo[] redimensionarArray(Prestamo[] original, int nuevoTamanio) {
+        Prestamo[] resultado = new Prestamo[nuevoTamanio];
+        for (int i = 0; i < nuevoTamanio; i++) {
+            resultado[i] = original[i];
+        }
+        return resultado;
+    }
+}
