@@ -219,3 +219,16 @@ class Usuario {
         return resultado;
     }
 }
+class Usuario {
+    public Prestamo[] obtenerPrestamosActivos() {
+        Prestamo[] activos = new Prestamo[contadorPrestamos];
+        int j = 0;
+        for (int i = 0; i < contadorPrestamos; i++) {
+            if (prestamos[i] != null && prestamos[i].estaActivo()) {
+                activos[j] = prestamos[i];
+                j++;
+            }
+        }
+        return redimensionarArray(activos, j);
+    }
+}
